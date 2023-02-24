@@ -3,6 +3,8 @@ from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 import shutil
+import asyncio
+import motor.motor_asyncio
 from images import *
 from searching_parsing import *
 
@@ -10,10 +12,28 @@ from searching_parsing import *
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
+client = motor.motor_asyncio.AsyncIOMotorClient('mongodb://localhost:27017/')
+db = client.gif_bot_db
+collection = db.gif_bot
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
-    await message.reply("Hello! Give me a GIF and I'll try to find out where it's from. \n\nPlease note, that in some cases it may take some time.")
+    '''зберігаємо інформацію про користувача в базі даних і пишемо повідомлення'''
+
+    user_id = message.from_user.id
+    username = message.from_user.username
+    first_name = message.from_user.first_name
+    last_name = message.from_user.last_name
+
+    user = await collection.find_one({'user_id': user_id})
+
+    if user is not None:
+        await message.answer("Welcome back!")
+        return
+
+    await collection.insert_one({"user_id": user_id, "username": username, "first_name": first_name, "last_name": last_name})
+
+    await message.reply("Hello! Give me a GIF and I'll try to find out where it's from.")
 
 
 @dp.message_handler(content_types='animation')
