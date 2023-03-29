@@ -8,6 +8,8 @@ It receives GIFs with memes and responds with information about the origin of th
 
 ## How It Works
 
+First, when a user presses the /start command the bot saves user's information in the **MongoDB** database and writes a greeting message.
+
 When a user sends a GIF with a meme, the bot saves it to disk in the MP4 format, breaks it down into frames using **OpenCV**, and then saves the non-identical frames to a folder. The similarity between frames is checked using **PIL** and **ImageHash** library.
 
 The app then goes through the saved images in the folder and, using the **Requests** library, performs a Google search for the image. After receiving the search results page, the app uses web scraping to find the meme's name.
