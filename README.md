@@ -2,7 +2,7 @@
 
 **Gif-Bot** is a **Telegram bot** written in **Python** using the **aiogram** library. 
 
-It receives GIFs with memes and responds with information about the origin of the meme.
+It receives GIFs with memes and responds with information about the origin of the meme using **OpenCV**, **BeautifulSoup** and **web scraping**.
 
 ![IMG_20230329_221636](https://user-images.githubusercontent.com/88056536/228645627-fee0823a-a6ea-4e85-a3aa-69d30e9c43de.jpg)
 
