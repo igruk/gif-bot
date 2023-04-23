@@ -16,9 +16,9 @@ App then goes through the saved images in the folder and, using **Requests** lib
 
 With the meme's name, app forms a new query to Google by adding word "knowyourmeme". After receiving the search results page, app uses web scraping to find link to knowyourmeme.com website - the Internet Meme Database. By following this link, app extracts information about the meme's name and origin with **BeautifulSoup**.
 
-After that bot will send to the user name and origin of the meme.
+After that bot will send to user name and origin of the meme.
 
-If the meme is not found on the knowyourmeme.com website, bot will send to user the name of meme that Google provided.
+If the meme is not found on the knowyourmeme.com website, bot will send to user name of meme that Google provided.
 
 ## Showcase
 
