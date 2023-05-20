@@ -1,5 +1,6 @@
 __pycache__/
-/downloads/
+/videos/
+/frames/
 /venv/
 .idea/
-/config.py
+/.env
