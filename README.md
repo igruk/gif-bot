@@ -12,9 +12,9 @@ First, when a user presses the 'start' command the bot sends a greeting message.
 
 When a user sends a GIF with a meme, the bot saves it to disk in the MP4 format, splits it into frames using **OpenCV**, and then saves the non-identical frames to a folder. The similarity between images is checked using the **Scikit-Image** library.
 
-After that, the bot performs a Visual Search and Web Search using the **Bing API** and finds a link to the knowyourmeme.com website - the Internet Meme Database. The app extracts information about the meme's name and origin with **BeautifulSoup** by following this link.
+After that, the bot performs a Visual Search and Web Search using the **Bing API** and finds a link to the knowyourmeme.com website - the Internet Meme Database. Then extracts information about the meme's name and origin with **BeautifulSoup** by following this link.
 
-After that bot sends the found information to the user.
+Finally, the bot sends the found information to the user.
 
 ## Showcase
 
