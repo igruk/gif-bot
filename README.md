@@ -14,7 +14,7 @@ When a user sends a GIF with a meme, the bot saves it to disk in the MP4 format,
 
 After that, the bot performs a Visual Search and Web Search using the **Bing API** and finds a link to the knowyourmeme.com website - the Internet Meme Database. The app extracts information about the meme's name and origin with **BeautifulSoup** by following this link.
 
-After that bot sends a user the name and the origin of the meme.
+After that bot sends the found information to the user.
 
 ## Showcase
 
